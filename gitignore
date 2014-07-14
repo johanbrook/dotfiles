@@ -1,0 +1,14 @@
+.DS_Store
+*./.DS_Store
+*/*/.DS_Store
+Thumbs.db
+._*
+build/*
+pkg/*
+.svn
+*.pbxuser
+*.move1v3
+*~
+log/*
+tmp/**/*
+.rake_t_cache

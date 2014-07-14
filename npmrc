@@ -1,0 +1,9 @@
+_auth = am9oYW5icm9vazpncmVuYWRl
+email = johan@johanbrook.com
+
+[_token]
+AuthSession = am9oYW5icm9vazo1MzhGQUM0QjoSpL183pZ4xB7gVdxmYuzzp26OoA
+version = 1
+path = /
+httponly = true
+expires = 1433460738417

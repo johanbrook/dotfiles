@@ -1,0 +1,1 @@
+export PATH="/usr/local/bin:/usr/local/share/npm/bin:$HOME/.dotfiles/bin:$PATH"

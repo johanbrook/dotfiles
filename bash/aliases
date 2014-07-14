@@ -1,0 +1,65 @@
+# Reload the bash_profile
+alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
+
+alias vps="ssh root@johanbrook.com"
+alias cd..="cd .."
+alias irc="ssh johanbr@hugin.chalmers.it"
+alias ch="ssh brook@129.16.20.174"
+
+# Web
+
+alias jvb="cd ~/sites/johanbrook_wp3/wp-content/themes"
+alias chalmers="cd /Users/Johan/Sites/chalmersit_beta/core/wp-content/themes/chalmersit"
+alias dsm="cd /Users/Johan/Sites/dsm13/core/wp-content/themes/dsm13"
+alias sexit="cd /Users/Johan/Sites/sexit.chalmers.it/core/wp-content/themes/sexit13"
+
+alias elasticsearch="elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
+
+# Pretty print JSON
+
+function json() {
+	curl "$@" | python -mjson.tool
+}
+
+# Open a new tab with the current directory
+function tab() {
+  osascript 2>/dev/null <<EOF
+    tell application "System Events"
+      tell process "Terminal" to keystroke "t" using command down
+    end
+    tell application "Terminal"
+      activate
+      do script with command "cd \"$PWD\"; $*" in window 1
+    end tell
+EOF
+}
+
+# Open up Github with current directory name
+function ghd () {
+	open -a google\ chrome 'http://github.com/johanbrook/'${PWD##*/}
+}
+
+# Projects
+alias ads="cd ~/code/projects/xdin/adaglance && pg_start && subl . && rails s"
+alias ad="cd ~/code/projects/xdin/adaglance"
+
+# Dev
+
+# Serves a simple HTTP server on localhost:8000. Run from any directory.
+alias pyserver='python -m SimpleHTTPServer'
+
+# Serves a simple PHP HTTP server on localhost:8000. Run from any directory.
+alias phpserver='php -S localhost:8000'
+
+# Start MongoDB server
+alias mongo_start='mongod --config /usr/local/etc/mongod.conf'
+
+# Start Memcached
+#alias memcached='/usr/local/bin/memcached'
+
+#alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'
+#alias mysql_stop='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
+
+# Start and stop PostgreSQL server
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'

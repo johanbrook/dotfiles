@@ -1,0 +1,5 @@
+[
+	// Make paste-and-indent the default paste behavior
+  	{ "keys": ["super+v"], "command": "paste_and_indent" },
+  	{ "keys": ["super+shift+v"], "command": "paste" }
+]

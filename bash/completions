@@ -1,0 +1,5 @@
+source $HOME/.bash/completion_scripts/git_completion
+source $HOME/.bash/completion_scripts/git_flow_completion
+
+source $HOME/.bash/completion_scripts/rake_completion
+complete -o default -o nospace -F _rakecomplete rake
