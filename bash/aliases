@@ -1,6 +1,9 @@
 # Reload the bash_profile
 alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
 
+# Quick file and dir size
+alias sizeof='du -sch'
+
 alias vps="ssh root@johanbrook.com"
 alias cd..="cd .."
 alias irc="ssh johanbr@hugin.chalmers.it"
