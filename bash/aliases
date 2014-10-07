@@ -9,14 +9,9 @@ alias cd..="cd .."
 alias irc="ssh johanbr@hugin.chalmers.it"
 alias ch="ssh brook@129.16.20.174"
 
-# Web
+# Work
 
-alias jvb="cd ~/sites/johanbrook_wp3/wp-content/themes"
-alias chalmers="cd /Users/Johan/Sites/chalmersit_beta/core/wp-content/themes/chalmersit"
-alias dsm="cd /Users/Johan/Sites/dsm13/core/wp-content/themes/dsm13"
-alias sexit="cd /Users/Johan/Sites/sexit.chalmers.it/core/wp-content/themes/sexit13"
-
-alias elasticsearch="elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
+alias lookback="mongo $LOOKBACK_PRODUCTION_URL -u $LOOKBACK_PRODUCTION_USER -p $LOOKBACK_PRODUCTION_PASSWORD"
 
 # Pretty print JSON
 
