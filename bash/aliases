@@ -7,11 +7,10 @@ alias sizeof='du -sch'
 alias vps="ssh root@johanbrook.com"
 alias cd..="cd .."
 alias irc="ssh johanbr@hugin.chalmers.it"
-alias ch="ssh brook@129.16.20.174"
 
 # Work
 
-alias lookback="mongo $LOOKBACK_PRODUCTION_URL -u $LOOKBACK_PRODUCTION_USER -p $LOOKBACK_PRODUCTION_PASSWORD"
+alias lookback="meteor --settings ../local-settings/settings.json"
 
 # Pretty print JSON
 
@@ -36,10 +35,6 @@ EOF
 function ghd () {
 	open -a google\ chrome 'http://github.com/johanbrook/'${PWD##*/}
 }
-
-# Projects
-alias ads="cd ~/code/projects/xdin/adaglance && pg_start && subl . && rails s"
-alias ad="cd ~/code/projects/xdin/adaglance"
 
 # Dev
 
