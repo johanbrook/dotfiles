@@ -20,6 +20,7 @@
 	untrack = rm --cached
 	gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
 	latest = log --since=yesterday
+	hash = !"git rev-parse --short HEAD |pbcopy"
 
 [color]
 	diff = auto
