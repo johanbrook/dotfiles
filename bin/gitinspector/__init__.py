@@ -1,6 +1,6 @@
 # coding: utf-8
 #
-# Copyright © 2012 Ejwa Software. All rights reserved.
+# Copyright © 2013 Ejwa Software. All rights reserved.
 #
 # This file is part of gitinspector.
 #
@@ -17,12 +17,4 @@
 # You should have received a copy of the GNU General Public License
 # along with gitinspector. If not, see <http://www.gnu.org/licenses/>.
 
-import os
-
-def run(directory, command):
-	previous_directory = os.getcwd()
-	os.chdir(directory)
-	f = os.popen(command)
-	os.chdir(previous_directory)
-
-	return f
+# This file was intentionally left blank.

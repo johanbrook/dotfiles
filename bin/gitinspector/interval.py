@@ -1,6 +1,6 @@
 # coding: utf-8
 #
-# Copyright © 2012-2014 Ejwa Software. All rights reserved.
+# Copyright © 2012-2013 Ejwa Software. All rights reserved.
 #
 # This file is part of gitinspector.
 #
@@ -17,23 +17,34 @@
 # You should have received a copy of the GNU General Public License
 # along with gitinspector. If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import print_function
 from __future__ import unicode_literals
 
-try:
-	import localization
-	localization.init()
-except:
-	import gitinspector.localization
-	gitinspector.localization.init()
+__since__ = ""
 
-__version__ = "0.3.2"
+__until__ = ""
 
-__doc__ = _("""Copyright © 2012-2014 Ejwa Software. All rights reserved.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
+__ref__ = "HEAD"
 
-Written by Adam Waldenberg.""")
-def output():
-	print("gitinspector {0}\n".format(__version__) + __doc__)
+def has_interval():
+	return __since__ + __until__ != ""
+
+def get_since():
+	return __since__
+
+def set_since(since):
+	global __since__
+	__since__ = "--since=\"" + since + "\" "
+
+def get_until():
+	return __until__
+
+def set_until(until):
+	global __until__
+	__until__ = "--until=\"" + until + "\" "
+
+def get_ref():
+	return __ref__
+
+def set_ref(ref):
+	global __ref__
+	__ref__ = ref

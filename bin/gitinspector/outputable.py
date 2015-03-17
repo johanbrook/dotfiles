@@ -1,6 +1,6 @@
 # coding: utf-8
 #
-# Copyright © 2012-2014 Ejwa Software. All rights reserved.
+# Copyright © 2012-2013 Ejwa Software. All rights reserved.
 #
 # This file is part of gitinspector.
 #
@@ -19,21 +19,22 @@
 
 from __future__ import print_function
 from __future__ import unicode_literals
+import format
 
-try:
-	import localization
-	localization.init()
-except:
-	import gitinspector.localization
-	gitinspector.localization.init()
+class Outputable(object):
+	def output_html(self):
+		print(_("HTML output not yet supported in") + " \"" + self.__class__.__name__ + "\".")
 
-__version__ = "0.3.2"
+	def output_text(self):
+		print(_("Text output not yet supported in") + " \"" + self.__class__.__name__ + "\".")
 
-__doc__ = _("""Copyright © 2012-2014 Ejwa Software. All rights reserved.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
+	def output_xml(self):
+		print(_("XML output not yet supported in") + " \"" + self.__class__.__name__ + "\".")
 
-Written by Adam Waldenberg.""")
-def output():
-	print("gitinspector {0}\n".format(__version__) + __doc__)
+def output(outputable):
+	if format.get_selected() == "html" or format.get_selected() == "htmlembedded":
+		outputable.output_html()
+	elif format.get_selected() == "text":
+		outputable.output_text()
+	else:
+		outputable.output_xml()

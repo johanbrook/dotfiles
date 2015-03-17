@@ -1,6 +1,6 @@
 # coding: utf-8
 #
-# Copyright © 2012-2014 Ejwa Software. All rights reserved.
+# Copyright © 2013 Ejwa Software. All rights reserved.
 #
 # This file is part of gitinspector.
 #
@@ -17,23 +17,22 @@
 # You should have received a copy of the GNU General Public License
 # along with gitinspector. If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import print_function
 from __future__ import unicode_literals
-
 try:
-	import localization
-	localization.init()
+	from urllib.parse import urlencode
 except:
-	import gitinspector.localization
-	gitinspector.localization.init()
+	from urllib import urlencode
+import format
+import hashlib
 
-__version__ = "0.3.2"
+def get_url(email, size=20):
+	md5hash = hashlib.md5(email.encode("utf-8").lower().strip()).hexdigest()
+	base_url = "http://www.gravatar.com/avatar/" + md5hash
+	params = None
 
-__doc__ = _("""Copyright © 2012-2014 Ejwa Software. All rights reserved.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
+	if format.get_selected() == "html":
+		params = {"default": "identicon", "size": size}
+	elif format.get_selected() == "xml":
+		params = {"default": "identicon"}
 
-Written by Adam Waldenberg.""")
-def output():
-	print("gitinspector {0}\n".format(__version__) + __doc__)
+	return base_url + "?" + urlencode(params)
