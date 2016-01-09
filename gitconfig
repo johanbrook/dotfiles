@@ -21,6 +21,7 @@
 	gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
 	latest = log --since=yesterday
 	hash = !"git rev-parse --short HEAD |tr -d '\n' |pbcopy && echo 'Copied hash to clipboard'"
+	current = !"git log $(git rev-parse --abbrev-ref HEAD) ^master --no-merges"
 
 [color]
 	diff = auto
