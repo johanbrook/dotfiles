@@ -1,5 +1,9 @@
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
 # brew install trash
 alias rm=trash
+
 # Reload the bash_profile
 alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
 
