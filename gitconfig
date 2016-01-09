@@ -20,7 +20,7 @@
 	untrack = rm --cached
 	gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
 	latest = log --since=yesterday
-	hash = !"git rev-parse --short HEAD |pbcopy"
+	hash = !"git rev-parse --short HEAD |tr -d '\n' |pbcopy && echo 'Copied hash to clipboard'"
 
 [color]
 	diff = auto
