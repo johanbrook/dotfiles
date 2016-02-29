@@ -4,7 +4,8 @@ alias ...="cd ../.."
 # brew install trash
 alias rm=trash
 
-alias resetwifi=sudo /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -z
+alias resetwifi="sudo /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -z"
+
 
 # Reload the bash_profile
 alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
