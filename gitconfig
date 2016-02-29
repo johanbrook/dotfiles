@@ -22,6 +22,7 @@
 	latest = log --since=yesterday
 	hash = !"git rev-parse --short HEAD |tr -d '\n' |pbcopy && echo 'Copied hash to clipboard'"
 	current = !"git log $(git rev-parse --abbrev-ref HEAD) ^master --no-merges"
+	lastchange = "log -p --follow -n 1"
 
 [color]
 	diff = auto
