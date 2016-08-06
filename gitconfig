@@ -24,6 +24,11 @@
 	current = !"git log $(git rev-parse --abbrev-ref HEAD) ^master --no-merges"
 	lastchange = "log -p --follow -n 1"
 
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
+
 [color]
 	diff = auto
 	status = auto
