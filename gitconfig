@@ -15,7 +15,7 @@
 	unstage = reset HEAD
 	n = !"git ls-files | xargs notes | awk -F: '{ print $1,$2; print $3,$4; print $5}' | grcat conf.notes "
 	committers = shortlog -nse --no-merges
-	sync = !git pull origin master && git push origin master
+	sync = !git pull --rebase origin && git push origin
 	fuckit = reset --hard HEAD
 	untrack = rm --cached
 	gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
