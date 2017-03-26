@@ -1,12 +1,13 @@
 [user]
-	name = Johan Brook
-	email = johan.jvb@gmail.com
+  name = Johan Brook
+  email = johan.jvb@gmail.com
 [alias]
 	co = checkout
 	ci = commit
 	cia = commit -a -m
 	b = branch
 	p = push
+  po = push origin
 	pom = push origin master
 	log = log --topo-order --decorate
 	glog = log --format='%C(cyan)%h%Creset %Cgreen%an%Creset\t%s' --graph
@@ -22,12 +23,13 @@
 	latest = log --since=yesterday
 	hash = !"git rev-parse --short HEAD |tr -d '\n' |pbcopy && echo 'Copied hash to clipboard'"
 	current = !"git log $(git rev-parse --abbrev-ref HEAD) ^master --no-merges"
-	lastchange = "log -p --follow -n 1"
+	lastchange = log -p --follow -n 1
+  me = log --since='00:00:00' --no-merges --oneline --author=johan.jvb@gmail.com
 
 [pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+  log = diff-so-fancy | less
+  show = diff-so-fancy | less
+  diff = diff-so-fancy | less
 
 [color]
 	diff = auto
