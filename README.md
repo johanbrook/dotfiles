@@ -2,7 +2,7 @@
 	cd $HOME/.dotfiles
 	rake install
 
-![Terminal Bright](http://cl.ly/eOZC/Ska%CC%88rmavbild%202016-01-09%20kl.%2018.28.25.png)
+![Terminal Bright](https://github.com/johanbrook/dotfiles/raw/master/terminal.png)
 
 Using iTerm.
 
