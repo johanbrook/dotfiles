@@ -1,0 +1,52 @@
+{
+    "telemetry.enableTelemetry": false,
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "editor.tabSize": 4,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "Fira Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "editor.wordWrapColumn": 120,
+    "editor.wordWrap": "bounded",
+    "explorer.openEditors.visible": 0,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true
+    },
+    "workbench.statusBar.feedback.visible": false,
+    "eslint.trace.server": "messages",
+    "eslint.alwaysShowStatus": true,
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "git.confirmSync": false,
+    "html.format.wrapLineLength": 100,
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+
+    "todohighlight.keywords": [
+        "XXX",
+        "FIXME",
+        "TODO"
+    ],
+
+    "todohighlight.defaultStyle": {
+        "borderRadius": "2px",
+        "backgroundColor": "#2D3315",
+        "color": "yellow",
+        "overviewRulerColor": "#ffab00"
+    },
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.defaultDateStyle": "absolute",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.statusBar.reduceFlicker": true,
+    "gitlens.codeLens.enabled": false,
+}
