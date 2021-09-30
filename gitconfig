@@ -1,30 +1,39 @@
 [user]
-  name = Johan Brook
-  email = johan.jvb@gmail.com
+	name = Johan Brook
+	email = johan@johanbrook.com
 [alias]
 	co = checkout
 	ci = commit
 	cia = commit -a -m
 	b = branch
-	p = push
-  po = push origin
-	pom = push origin master
-	log = log --topo-order --decorate
+	log = log --topo-order
+	l = log-compact --topo-order --decorate --no-times --weekday
 	glog = log --format='%C(cyan)%h%Creset %Cgreen%an%Creset\t%s' --graph
 	s = status
-	pul = pull --rebase
 	unstage = reset HEAD
 	n = !"git ls-files | xargs notes | awk -F: '{ print $1,$2; print $3,$4; print $5}' | grcat conf.notes "
 	committers = shortlog -nse --no-merges
 	sync = !git pull --rebase origin && git push origin
 	fuckit = reset --hard HEAD
 	untrack = rm --cached
-	gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
-	latest = log --since=yesterday
+	today = log --since=yesterday
 	hash = !"git rev-parse --short HEAD |tr -d '\n' |pbcopy && echo 'Copied hash to clipboard'"
-	current = !"git log $(git rev-parse --abbrev-ref HEAD) ^master --no-merges"
+	# View commits in local branch vs. master
+	current = !"git log $(git rev-parse --abbrev-ref HEAD) ^main --no-merges"
 	lastchange = log -p --follow -n 1
-  me = log --since='00:00:00' --no-merges --oneline --author=johan.jvb@gmail.com
+	# View unpushed commits
+	unpushed = !git log @{u}..HEAD
+  	# View all unpushed commits on all branches
+  	all-unpushed = !git log --branches --not --remotes --oneline
+  	# View latest unpushed commits on all branches
+  	unpushed-branches = !git log --branches --not --remotes --oneline --decorate --simplify-by-decoration
+  	me = log --since='00:00:00' --no-merges --oneline --author=johan@johanbrook.com
+	# Interactive rebase on current branch
+	rebase-current = rebase -i HEAD~$(git current | wc -l | awk '{$1=$1};1')
+	rb = !git rebase -i `git merge-base main HEAD`
+	view = show --format=full
+	# Switch to master, pull, and delete the branch you were on
+	f = !curbr=$(git rev-parse --abbrev-ref HEAD) && git fetch -p && git fetch origin main:main && git checkout main && git branch -D $curbr
 
 [pager]
   log = diff-so-fancy | less
@@ -54,11 +63,16 @@
   new = green reverse
   whitespace = white reverse
 
+[color "log-compact"]
+  initials = green
+  time = blue
+
 [core]
 	excludesfile = $HOME/.gitignore
-	editor = code -w
+	editor = micro
+
 [format]
-	pretty = %C(cyan)%h%C(green) %an\t%Creset%s
+	pretty = %C(cyan)%h %C(green)%an %C(auto)%s %d
 
 [github]
 	user = johanbrook
@@ -71,5 +85,12 @@
 
 [push]
 	default = simple
+
 [rebase]
 	autoStash = true
+
+[pull]
+	rebase = true
+
+[merge]
+	conflictstyle = diff3
