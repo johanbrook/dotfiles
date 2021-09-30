@@ -1,10 +1,6 @@
-	git clone git://github.com/johanbrook/dotfiles ~/.dotfiles
-	cd $HOME/.dotfiles
-	rake install
+# My dotfiles
 
-![Terminal Bright](https://github.com/johanbrook/dotfiles/raw/master/terminal.png)
-
-Using iTerm.
+In case of computer switch.
 
 ### Thanks
 

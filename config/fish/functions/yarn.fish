@@ -1,1 +1,0 @@
-/Users/Johan/.config/fisherman/nvm/yarn.fish
