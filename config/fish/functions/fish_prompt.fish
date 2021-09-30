@@ -2,29 +2,29 @@ function fish_prompt
 	if not set -q -g __fish_robbyrussell_functions_defined
     set -g __fish_robbyrussell_functions_defined
     function _git_branch_name
-      echo (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+      echo (git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
     end
 
     function _is_git_dirty
-      echo (git status -s --ignore-submodules=dirty ^/dev/null)
+      echo (git status -s --ignore-submodules=dirty 2>/dev/null)
     end
 
     function _is_git_repo
       type -q git; or return 1
-      git status -s >/dev/null ^/dev/null
+      git status -s >/dev/null 2>/dev/null
     end
 
     function _hg_branch_name
-      echo (hg branch ^/dev/null)
+      echo (hg branch 2>/dev/null)
     end
 
     function _is_hg_dirty
-      echo (hg status -mard ^/dev/null)
+      echo (hg status -mard 2>/dev/null)
     end
 
     function _is_hg_repo
       type -q hg; or return 1
-      hg summary >/dev/null ^/dev/null
+      hg summary >/dev/null 2>/dev/null
     end
 
     function _repo_branch_name
@@ -44,26 +44,27 @@ function fish_prompt
     end
   end
 
-  set -l cyan (set_color -o cyan)
-  set -l yellow (set_color -o yellow)
-  set -l red (set_color -o red)
-  set -l blue (set_color -o blue)
-  set -l green (set_color -o green)
+  set -l cyan (set_color cyan)
+  set -l yellow (set_color yellow)
+  set -l red (set_color red)
+  set -l blue (set_color blue)
+  set -l green (set_color green)
   set -l normal (set_color normal)
-	set -l grey (set_color -o brblack)
+	set -l grey (set_color black)
+	set -l grey_br (set_color brblack)
 	set -l branch (set_color -o -u blue)
 
-  set -l arrow "$normal→ "
+  set -l arrow "$normal→"
   if [ $USER = 'root' ]
-    set arrow "$red# "
+    set arrow "$red#"
   end
 
-  set -l cwd $cyan (prompt_pwd)
+  set -l cwd $grey_br (prompt_pwd)
 
   set -l repo_type (_repo_type)
   if [ $repo_type ]
     set -l repo_branch (_repo_branch_name $repo_type)
-    set repo_info "$grey (at $branch$repo_branch$grey)"
+    set repo_info "$grey (on $branch$repo_branch$normal$grey)"
 
     if [ (_is_repo_dirty $repo_type) ]
       set -l dirty "$red ✗"
@@ -71,5 +72,5 @@ function fish_prompt
     end
   end
 
-  echo -n -s ''$cwd $repo_info\n $arrow$normal' '
+  echo -n -s ''$cwd $repo_info\n$arrow$normal ' '
 end
