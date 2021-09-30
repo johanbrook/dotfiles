@@ -2,6 +2,8 @@
 
 In case of computer switch.
 
+![Terminal screenshot](https://github.com/johanbrook/dotfiles/raw/master/terminal.png)
+
 ### Thanks
 
 - [Seivan](https://github.com/seivan/dotfiles)
