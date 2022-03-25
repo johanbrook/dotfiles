@@ -3,3 +3,7 @@ config/gh/hosts.yml
 config/micro/buffers/history
 config/configstore/nodemon.json
 config/configstore/update-notifier*
+
+# Fish
+config/fish/fishd.*
+config/fish/fish_variables
