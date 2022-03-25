@@ -1,3 +1,5 @@
 .DS_Store
 config/gh/hosts.yml
 config/micro/buffers/history
+config/configstore/nodemon.json
+config/configstore/update-notifier*
