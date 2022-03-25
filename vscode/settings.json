@@ -2,7 +2,6 @@
     "telemetry.enableTelemetry": false,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.formatOnPaste": true,
     "editor.tabSize": 4,
     "workbench.startupEditor": "newUntitledFile",
     "editor.fontFamily": "Fira Code Retina, Menlo, Monaco, 'Courier New', monospace",
@@ -49,4 +48,29 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.statusBar.reduceFlicker": true,
     "gitlens.codeLens.enabled": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.formatOnSave": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
