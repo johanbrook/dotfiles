@@ -1,0 +1,5 @@
+// These settings override both User and Default settings for the Markdown syntax
+{
+    "wrap_width_style": "min",
+    "wrap_width": 100
+}

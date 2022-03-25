@@ -1,0 +1,22 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"ayu",
+		"Clickable URLs",
+		"EdgeDB",
+		"EditorConfig",
+		"Emmet",
+		"LSP",
+		"LSP-css",
+		"LSP-Deno",
+		"LSP-json",
+		"LSP-typescript",
+		"Nunjucks",
+		"Package Control",
+	],
+}

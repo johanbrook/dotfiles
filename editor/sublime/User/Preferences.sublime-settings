@@ -1,0 +1,36 @@
+{
+	"theme": "ayu-dark.sublime-theme",
+  	"color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
+  	"ui_separator": true,
+	"create_window_at_startup": false,
+	"draw_indent_guides": true,
+	"enable_tab_scrolling": false,
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Fira Code",
+	"font_size": 13.0,
+	"highlight_modified_tabs": true,
+	"highlight_line": true,
+	"remember_open_files": false,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"shift_tab_unindent": true,
+	"hide_new_tab_button": true,
+	"caret_style": "blink",
+	"caret_extra_top": 1,
+	"caret_extra_bottom": 1,
+	"mini_diff": "auto",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"scroll_past_end": true,
+	"folder_exclude_patterns": [
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".Trash",
+		".Trash-*",
+		"node_modules"
+	]
+}

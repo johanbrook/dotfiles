@@ -1,0 +1,18 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+    "variables":
+    {
+    },
+    "rules":
+    [
+        {
+            "class": "sidebar_label",
+            "fg": "#c1c7d4",
+            "font.size": 13
+        },
+        {
+            "class": "sidebar_heading",
+            "opacity": 0
+        },
+    ]
+}

@@ -1,0 +1,19 @@
+[
+    {
+        "button": "button1",
+        "count": 1,
+        "modifiers": [
+            "alt"
+        ],
+        "press_command": "lsp_symbol_definition"
+    },
+    {
+        "button": "button1",
+        "count": 1,
+        "modifiers": [
+            "super"
+        ],
+        "command": "open_url_under_cursor",
+        "press_command": "drag_select",
+    }
+]
