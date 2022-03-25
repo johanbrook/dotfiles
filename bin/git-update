@@ -1,5 +1,0 @@
-#!/bin/bash
-pushd "$(git rev-parse --show-toplevel)"
-git submodule sync
-git submodule update --init --recursive $*
-popd
