@@ -11,6 +11,7 @@
 		"EdgeDB",
 		"EditorConfig",
 		"Emmet",
+		"JsPrettier",
 		"LSP",
 		"LSP-css",
 		"LSP-Deno",

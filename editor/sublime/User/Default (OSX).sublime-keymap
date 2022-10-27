@@ -1,8 +1,6 @@
 [
     {
-        "keys": [
-            "super+shift+r"
-        ],
+        "keys": ["super+shift+r"],
         "command": "lsp_symbol_rename",
         "context": [
             {
@@ -13,9 +11,8 @@
         ]
     },
     {
-        "keys": [
-            "super+shift+j"
-        ],
+        "keys": ["super+shift+j"],
         "command": "reveal_in_side_bar"
-    }
+    },
+    { "keys": ["super+d"], "command": "js_prettier" }
 ]
